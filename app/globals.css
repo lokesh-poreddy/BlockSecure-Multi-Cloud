@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Updated color tokens to match BlockSecure cybersecurity theme */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.3 0.05 200);
+  --card: oklch(0.98 0.01 200);
+  --card-foreground: oklch(0.4 0.03 200);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.3 0.05 200);
+  --primary: oklch(0.3 0.05 200);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.65 0.15 30);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.95 0.01 200);
+  --muted-foreground: oklch(0.5 0.02 200);
+  --accent: oklch(0.65 0.15 30);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.6 0.2 15);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0.01 200);
+  --input: oklch(0.98 0.01 200);
+  --ring: oklch(0.4 0.1 270);
+  --chart-1: oklch(0.6 0.15 220);
+  --chart-2: oklch(0.65 0.12 160);
+  --chart-3: oklch(0.7 0.15 50);
+  --chart-4: oklch(0.6 0.2 15);
+  --chart-5: oklch(0.55 0.2 280);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.3 0.05 200);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.3 0.05 200);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.65 0.15 30);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.4 0.03 200);
+  --sidebar-ring: oklch(0.4 0.1 270);
+}
+
+.dark {
+  /* Updated dark mode colors for cybersecurity theme */
+  --background: oklch(0.08 0.01 200);
+  --foreground: oklch(0.95 0.01 200);
+  --card: oklch(0.1 0.01 200);
+  --card-foreground: oklch(0.95 0.01 200);
+  --popover: oklch(0.08 0.01 200);
+  --popover-foreground: oklch(0.95 0.01 200);
+  --primary: oklch(0.95 0.01 200);
+  --primary-foreground: oklch(0.08 0.01 200);
+  --secondary: oklch(0.15 0.02 200);
+  --secondary-foreground: oklch(0.95 0.01 200);
+  --muted: oklch(0.15 0.02 200);
+  --muted-foreground: oklch(0.7 0.01 200);
+  --accent: oklch(0.65 0.15 30);
+  --accent-foreground: oklch(0.08 0.01 200);
+  --destructive: oklch(0.6 0.2 15);
+  --destructive-foreground: oklch(0.95 0.01 200);
+  --border: oklch(0.15 0.02 200);
+  --input: oklch(0.15 0.02 200);
+  --ring: oklch(0.6 0.1 270);
+  --chart-1: oklch(0.6 0.15 220);
+  --chart-2: oklch(0.65 0.12 160);
+  --chart-3: oklch(0.7 0.15 50);
+  --chart-4: oklch(0.6 0.2 15);
+  --chart-5: oklch(0.55 0.2 280);
+  --sidebar: oklch(0.05 0.01 200);
+  --sidebar-foreground: oklch(0.95 0.01 200);
+  --sidebar-primary: oklch(0.6 0.15 220);
+  --sidebar-primary-foreground: oklch(0.95 0.01 200);
+  --sidebar-accent: oklch(0.15 0.02 200);
+  --sidebar-accent-foreground: oklch(0.95 0.01 200);
+  --sidebar-border: oklch(0.15 0.02 200);
+  --sidebar-ring: oklch(0.6 0.1 270);
+}
+
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: rgb(var(--ring) / 0.5);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+/* Added smooth scrolling and improved animations */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations for landing page */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
