@@ -2,10 +2,8 @@
 
 A revolutionary hackathon MVP demonstrating how blockchain technology can secure and verify logs across AWS, Azure, and GCP with tamper-proof verification using Stacks blockchain and Clarity smart contracts.
 
-## 🚀 Live Demo
-
-- **Dashboard**: [https://blocksecure-multi-cloud.vercel.app/dashboard](https://blocksecure-multi-cloud.vercel.app/dashboard)
-- **Landing Page**: [https://blocksecure-multi-cloud.vercel.app](https://blocksecure-multi-cloud.vercel.app)
+## 🎥 Demo Video
+Check out our project demo: [Watch on X/Twitter](https://x.com/lokeshreddyPo/status/1961354800873836779)
 
 ## 🎯 Problem Statement
 
@@ -168,7 +166,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-Built with ❤️ by the BlockSecure team for blockchain security innovation.
+Built with ❤️ by the CloudLock team for blockchain security innovation.
 
 ## 🙏 Acknowledgments
 
