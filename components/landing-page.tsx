@@ -38,7 +38,7 @@ export function LandingPage() {
             <div className="flex items-center gap-4">
               <ThemeToggle />
               <Button variant="outline" asChild>
-                <Link href="https://github.com/lokesh-poreddy/BlockSecure-Multi-Cloud#" target="_blank">
+                <Link href="https://github.com/blocksecure/multi-cloud-mvp" target="_blank">
                   <Github className="h-4 w-4 mr-2" />
                   GitHub
                 </Link>
@@ -348,7 +348,7 @@ export function LandingPage() {
             </div>
             <div className="flex items-center gap-6">
               <Link
-                href="https://github.com/lokesh-poreddy/BlockSecure-Multi-Cloud#"
+                href="https://github.com/blocksecure/multi-cloud-mvp"
                 target="_blank"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -357,7 +357,7 @@ export function LandingPage() {
               <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
                 Dashboard
               </Link>
-              <p className="text-sm text-muted-foreground">Built with ❤️ for blockchain security by CloudLock Team</p>
+              <p className="text-sm text-muted-foreground">Built with ❤️ for blockchain security</p>
             </div>
           </div>
         </div>

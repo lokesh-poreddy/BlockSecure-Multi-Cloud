@@ -6,13 +6,11 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Shield, AlertTriangle, CheckCircle, Clock, Activity, Zap, Database, LogOut, User } from "lucide-react"
+import { Shield, AlertTriangle, CheckCircle, Clock, Activity, Zap, Database } from "lucide-react"
 import { BlockchainStats } from "./blockchain-stats"
 import { LogDetails } from "./log-details"
 import { TamperAlerts } from "./tamper-alerts"
 import { ThemeToggle } from "./theme-toggle"
-import { ExportLogs } from "./export-logs" // Added import for ExportLogs component
-import { useAuth } from "./auth-provider" // Added import for useAuth hook
 import { tamperDetector } from "@/lib/tamper-detection"
 
 interface LogEntry {
@@ -59,7 +57,6 @@ function generateTxId(): string {
 }
 
 export function Dashboard() {
-  const { user, logout } = useAuth() // Added auth context usage
   const [logs, setLogs] = useState<LogEntry[]>([])
   const [isRunning, setIsRunning] = useState(true)
   const [selectedLog, setSelectedLog] = useState<LogEntry | null>(null)
@@ -189,31 +186,20 @@ export function Dashboard() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 text-sm">
-                <User className="h-4 w-4" />
-                <span>{user?.name}</span>
-                <Badge variant="outline">{user?.role}</Badge>
-              </div>
               <ThemeToggle />
               <Badge variant={isRunning ? "default" : "secondary"} className="px-3 py-1">
                 <Activity className="h-3 w-3 mr-1" />
                 {isRunning ? "Live" : "Paused"}
               </Badge>
-              {user?.role === "admin" && (
-                <Button variant="outline" onClick={simulateRandomTamper} size="sm">
-                  Simulate Tamper
-                </Button>
-              )}
+              <Button variant="outline" onClick={simulateRandomTamper} size="sm">
+                Simulate Tamper
+              </Button>
               <Button
                 variant={isRunning ? "destructive" : "default"}
                 onClick={() => setIsRunning(!isRunning)}
                 size="sm"
               >
                 {isRunning ? "Pause" : "Resume"} Simulation
-              </Button>
-              <Button variant="outline" onClick={logout} size="sm">
-                <LogOut className="h-4 w-4 mr-1" />
-                Logout
               </Button>
             </div>
           </div>
@@ -222,12 +208,11 @@ export function Dashboard() {
 
       <div className="container mx-auto px-4 py-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-4">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="logs">Live Logs</TabsTrigger>
             <TabsTrigger value="blockchain">Blockchain</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            <TabsTrigger value="export">Export</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -565,50 +550,6 @@ export function Dashboard() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="export">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <div className="lg:col-span-1">
-                <ExportLogs logs={logs} />
-              </div>
-
-              <div className="lg:col-span-2">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Export Information</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                      <h4 className="font-medium">CSV Export</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Downloads a comma-separated values file containing all log entries with their blockchain
-                        verification status, timestamps, and hash values.
-                      </p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h4 className="font-medium">Report Export</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Generates a comprehensive HTML report with statistics and detailed log information that can be
-                        printed or saved as PDF for compliance purposes.
-                      </p>
-                    </div>
-
-                    <div className="p-4 bg-muted/50 rounded-lg">
-                      <h4 className="font-medium mb-2">Compliance Features</h4>
-                      <ul className="text-sm text-muted-foreground space-y-1">
-                        <li>• Blockchain transaction IDs for each log entry</li>
-                        <li>• Cryptographic hash verification status</li>
-                        <li>• Tamper detection results</li>
-                        <li>• Multi-cloud provider attribution</li>
-                        <li>• Timestamp integrity verification</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </TabsContent>
         </Tabs>
