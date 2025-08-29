@@ -2,8 +2,17 @@
 
 A revolutionary hackathon MVP demonstrating how blockchain technology can secure and verify logs across AWS, Azure, and GCP with tamper-proof verification using Stacks blockchain and Clarity smart contracts.
 
+## 🔮 Vision
+BlockSecure aims to revolutionize multi-cloud log security by leveraging blockchain technology. Our vision is to:
+- Create an immutable, decentralized log verification system
+- Enable seamless integration across major cloud providers
+- Establish a new standard for log integrity in enterprise environments
+- Empower organizations with real-time tamper detection
+- Build trust through transparency and blockchain verification
+
 ## 🎥 Demo Video
 Check out our project demo: [Watch on X/Twitter](https://x.com/lokeshreddyPo/status/1961354800873836779)
+
 
 ## 🎯 Problem Statement
 
@@ -178,3 +187,27 @@ Built with ❤️ by the CloudLock team for blockchain security innovation.
 ---
 
 **BlockSecure Multi-Cloud** - Securing the future of multi-cloud infrastructure with blockchain technology.
+
+### Smart Contract Details
+- **Network**: Stacks Testnet
+- **Contract Address**: `ST332M323FXZDSTYRNDJ6PRJJFQANEY423QMDAA13.blocksecure-logs`
+- **Contract Language**: Clarity
+- **Features**: Log anchoring, verification, and tamper detection
+
+## 📸 Project Screenshots
+
+### Dashboard View
+![Dashboard](public/dashboard-screenshot.png)
+*Real-time monitoring of logs across multiple cloud providers*
+
+### Tamper Detection
+![Tamper Detection](public/tamper-detection.png)
+*Advanced tamper detection with severity levels*
+
+### Blockchain Verification
+![Blockchain Verification](public/blockchain-verify.png)
+*Transaction verification and blockchain anchoring status*
+
+### Analytics Dashboard
+![Analytics](public/analytics-view.png)
+*Comprehensive analytics and reporting interface*
