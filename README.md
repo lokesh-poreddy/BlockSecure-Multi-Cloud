@@ -180,7 +180,6 @@ Built with ❤️ by the CloudLock team for blockchain security innovation.
 ## 🙏 Acknowledgments
 
 - Stacks Foundation for blockchain infrastructure
-- Vercel for deployment platform
 - Next.js team for the amazing framework
 - shadcn/ui for beautiful components
 
